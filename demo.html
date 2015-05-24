@@ -1,0 +1,38 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>resource-queue demo</title>
+
+<link rel="import" href="../web-resource/import.html">
+<link rel="import" href="resource-queue.html">
+
+<style>body { font-family: sans-serif }</style>
+
+<body>
+
+<resource-queue></resource-queue>
+
+<h2>Titles</h2>
+<pre><output id="output-json">Fetching JSON…</output></pre>
+
+<script>
+Collection('https://peerj.com/articles/index.json', { subject: 100 }).get('json', {
+    items: function(data) {
+        return data._items.map(function(item) {
+            return item.title;
+        });
+    },
+    next: function(data) {
+        if (this.total > 20) {
+            return false;
+        }
+
+        if (!data._links.next) {
+            return false;
+        }
+
+        return data._links.next.href;
+    },
+}).then(function(items) {
+    document.querySelector('#output-json').textContent = JSON.stringify(items, null, 2);
+});
+</script>

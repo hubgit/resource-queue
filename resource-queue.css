@@ -1,0 +1,19 @@
+:host {
+    display: block;
+}
+
+.panel-heading {
+    margin: 0;
+    font-weight: 100;
+}
+
+.log {
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.label.status {
+    display: inline-block;
+    width: 3rem;
+}

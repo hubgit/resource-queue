@@ -1,0 +1,21 @@
+{
+  "name": "resource-queue",
+  "version": "0.1.0",
+  "description": "A Polymer web component for interacting with a queue of requests for web resources",
+  "main": "resource-queue.html",
+  "authors": [
+      "Alf Eaton"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hubgit/resource-queue",
+  "ignore": [
+    "**/.*",
+    "demo.html",
+    "README.md"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "web-resource": "hubgit/web-resource",
+    "bootstrap": "twbs/bootstrap#~3.3.4"
+  }
+}
